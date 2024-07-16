@@ -53,8 +53,8 @@ def value_of_ace(card_one, card_two):
     2.  'A' (ace card) = 11 (if already in hand)
     3.  '2' - '10' = numerical value.
     """
-    sum = value_of_card(card_one) + value_of_card(card_two)
-    if sum > 10 or 'A' in [card_one,card_two]:
+    sum_of_cards = value_of_card(card_one) + value_of_card(card_two)
+    if sum_of_cards > 10 or 'A' in [card_one,card_two]:
         return 1
     return 11
     
@@ -84,7 +84,7 @@ def can_split_pairs(card_one, card_two):
     :return: bool - can the hand be split into two pairs? (i.e. cards are of the same value).
     """
 
-    return len(higher_card(card_one,card_two)) == 2
+    return value_of_card(card_one) == value_of_card(card_two)
 
 
 def can_double_down(card_one, card_two):
@@ -93,5 +93,5 @@ def can_double_down(card_one, card_two):
     :param card_one, card_two: str - first and second cards in hand.
     :return: bool - can the hand can be doubled down? (i.e. totals 9, 10 or 11 points).
     """
-    sum = value_of_card(card_one) + value_of_card(card_two)
-    return 9 <= sum <= 11
+    sum_of_cards = value_of_card(card_one) + value_of_card(card_two)
+    return 9 <= sum_of_cards <= 11
