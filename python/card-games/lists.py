@@ -11,7 +11,8 @@ def get_rounds(number):
     :return: list - current round and the two that follow.
     """
 
-    rounds = [number,number + 1,number + 2]
+    return [number,number + 1,number + 2]
+    
 
 
 
@@ -58,9 +59,9 @@ def approx_average_is_average(hand):
 
     actual_average = card_average(hand)
     method_one = (hand[0] + hand[-1]) / 2
-    method_two = hand[int(len(hand) - 1 / 2)]
+    method_two = hand[int((len(hand) - 1) / 2)]
 
-    return method_one == actual_average or method_two == actual_average 
+    return actual_average in (method_one, method_two) 
 
 def average_even_is_average_odd(hand):
     """Return if the (average of even indexed card values) == (average of odd indexed card values).
