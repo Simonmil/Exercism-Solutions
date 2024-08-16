@@ -76,7 +76,7 @@ def student_ranking(student_scores, student_names):
 
     ranking_list = []
     for index,score in enumerate(student_scores):
-        ranking_list.append("%s. %s: %s" % (index+1,student_names[index],score))
+        ranking_list.append(f"{index+1}. {student_names[index]}: {score}")
     
     return ranking_list
 
