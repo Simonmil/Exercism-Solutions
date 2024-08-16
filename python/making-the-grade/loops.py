@@ -59,8 +59,8 @@ def letter_grades(highest):
     """
 
     lower_score_threshold = [41]
-    delta = (highest - 40) / 4
-    for i in range(4):
+    delta = round((highest - 40) / 4)
+    for i in range(3):
         lower_score_threshold.append(lower_score_threshold[i] + delta)
 
     return lower_score_threshold
