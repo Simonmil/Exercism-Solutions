@@ -60,8 +60,8 @@ def letter_grades(highest):
 
     lower_score_threshold = [41]
     delta = round((highest - 40) / 4)
-    for i in range(3):
-        lower_score_threshold.append(lower_score_threshold[i] + delta)
+    for iteration in range(3):
+        lower_score_threshold.append(lower_score_threshold[iteration] + delta)
 
     return lower_score_threshold
     
@@ -76,7 +76,7 @@ def student_ranking(student_scores, student_names):
 
     ranking_list = []
     for index,score in enumerate(student_scores):
-        ranking_list.append("{}. {}: {}".format(index+1,student_names[index],score))
+        ranking_list.append("%s. %s: %s" % (index+1,student_names[index],score))
     
     return ranking_list
 
