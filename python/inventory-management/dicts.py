@@ -8,8 +8,10 @@ def create_inventory(items):
     :return: dict - the inventory dictionary.
     """
 
-    pass
-
+    inventory = {}
+    for item in items:
+        inventory[item] = inventory.get(item, 0) + 1
+    return inventory
 
 def add_items(inventory, items):
     """Add or increment items in inventory using elements from the items `list`.
@@ -19,7 +21,9 @@ def add_items(inventory, items):
     :return: dict - the inventory updated with the new items.
     """
 
-    pass
+    for item in items:
+        inventory[item] = inventory.get(item, 0) + 1
+    return inventory
 
 
 def decrement_items(inventory, items):
@@ -30,7 +34,10 @@ def decrement_items(inventory, items):
     :return: dict - updated inventory with items decremented.
     """
 
-    pass
+    for item in items:
+        if inventory.get(item, 0) > 0:
+            inventory[item] -= 1
+    return inventory
 
 
 def remove_item(inventory, item):
@@ -41,7 +48,9 @@ def remove_item(inventory, item):
     :return: dict - updated inventory with item removed. Current inventory if item does not match.
     """
 
-    pass
+    if item in inventory:
+        inventory.pop(item)
+    return inventory
 
 
 def list_inventory(inventory):
@@ -51,5 +60,8 @@ def list_inventory(inventory):
     :return: list of tuples - list of key, value pairs from the inventory dictionary.
     """
 
-    pass
-
+    inventory_list = []
+    for key,value in inventory.items():
+        if inventory.get(key,0) > 0:
+            inventory_list.append(tuple([key,value]))
+    return inventory_list
