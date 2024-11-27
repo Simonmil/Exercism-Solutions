@@ -53,5 +53,5 @@ def fix_wagon_depot(wagons_rows):
     :param wagons_rows: list[list[tuple]] - the list of rows of wagons.
     :return: list[list[tuple]] - list of rows of wagons.
     """
-    first_row, second_row, third_row = wagons_rows
-    
+    *sorted_wagon_rows, = zip(*wagons_rows)
+    return sorted_wagon_rows
