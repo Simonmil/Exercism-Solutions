@@ -36,8 +36,8 @@ def check_drinks(drink_name, drink_ingredients):
 
     """
     if set(drink_ingredients).isdisjoint(ALCOHOLS):
-        return f"{drink_name} Mocktail"
-    return f"{drink_name} Cocktail"
+        return f'{drink_name} Mocktail'
+    return f'{drink_name} Cocktail'
 
 
 def categorize_dish(dish_name, dish_ingredients):
@@ -53,9 +53,9 @@ def categorize_dish(dish_name, dish_ingredients):
 
     """
     categories = (VEGAN, VEGETARIAN, PALEO, KETO, OMNIVORE)
-    for i,category in enumerate(categories):
+    for index,category in enumerate(categories):
         if dish_ingredients <= category:
-            match i:
+            match index:
                 case 0:
                     category_name = 'VEGAN'
                 case 1:
@@ -68,7 +68,8 @@ def categorize_dish(dish_name, dish_ingredients):
                     category_name = 'OMNIVORE'
 
 
-            return f"{dish_name}: {category_name}"
+    return f'{dish_name}: {category_name}'
+
                         
 
 
