@@ -19,7 +19,38 @@ class Alien:
     collision_detection(other): Implementation TBD.
     """
 
-    pass
+    total_aliens_created = 0
+
+    def __init__(self,x_coordinate,y_coordinate):
+        self.x_coordinate = x_coordinate
+        self.y_coordinate = y_coordinate
+        self.health = 3
+        total_aliens_created += 1
+
+    def hit():
+        if self.health > 0:
+            self.health -= 1
+        return self.health
+
+    def is_alive():
+        if self.health <= 0:
+            return False
+        return True
+
+    def teleport(new_x_coordinate,new_y_coordinate):
+        self.x_coordinate = new_x_coordinate
+        self.y_coordinate = new_y_coordinate
+    
+    def collision_detection(object):
+        pass
+    
+    def total_aliens_created():
+        return total_aliens_created
+    
+
+
+def new_aliens_collection(start_positions):
+    for 
 
 
 #TODO:  create the new_aliens_collection() function below to call your Alien class with a list of coordinates.
