@@ -40,10 +40,9 @@ class Alien:
     def teleport(self,new_x_coordinate,new_y_coordinate):
         self.x_coordinate = new_x_coordinate
         self.y_coordinate = new_y_coordinate
-    
-    def collision_detection(self,object):
+
+    def collision_detection(self,some_object):
         pass
-    
 
 
 def new_aliens_collection(start_positions):
@@ -51,4 +50,3 @@ def new_aliens_collection(start_positions):
     for position in start_positions:
         aliens.append(Alien(position[0],position[1]))
     return aliens
-
