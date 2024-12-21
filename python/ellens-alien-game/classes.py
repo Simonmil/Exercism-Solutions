@@ -46,6 +46,9 @@ class Alien:
 
 
 def new_aliens_collection(start_positions):
+    """
+    Different cool solution: return [Alien(x,y) for x,y in positions]
+    """
     aliens = []
     for position in start_positions:
         aliens.append(Alien(position[0],position[1]))
