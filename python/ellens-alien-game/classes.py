@@ -25,32 +25,30 @@ class Alien:
         self.x_coordinate = x_coordinate
         self.y_coordinate = y_coordinate
         self.health = 3
-        total_aliens_created += 1
+        Alien.total_aliens_created += 1
 
-    def hit():
+    def hit(self):
         if self.health > 0:
             self.health -= 1
         return self.health
 
-    def is_alive():
+    def is_alive(self):
         if self.health <= 0:
             return False
         return True
 
-    def teleport(new_x_coordinate,new_y_coordinate):
+    def teleport(self,new_x_coordinate,new_y_coordinate):
         self.x_coordinate = new_x_coordinate
         self.y_coordinate = new_y_coordinate
     
-    def collision_detection(object):
+    def collision_detection(self,object):
         pass
-    
-    def total_aliens_created():
-        return total_aliens_created
     
 
 
 def new_aliens_collection(start_positions):
-    for 
+    aliens = []
+    for position in start_positions:
+        aliens.append(Alien(position[0],position[1]))
+    return aliens
 
-
-#TODO:  create the new_aliens_collection() function below to call your Alien class with a list of coordinates.
