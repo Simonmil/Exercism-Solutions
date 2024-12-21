@@ -13,8 +13,12 @@ def generate_seat_letters(number):
     Example: A, B, C, D
 
     """
-
-    pass
+    letters = ["A","B","C","D"]
+    n = 1
+    while n <= number:
+        num = n % 4
+        yield letters[num]
+        n += 1
 
 
 def generate_seats(number):
@@ -33,8 +37,12 @@ def generate_seats(number):
     Example: 3C, 3D, 4A, 4B
 
     """
+    letters = generate_seat_letters(number)
+    for num in range(number):
+        letter = next(letters)
+        n = num//4 + 1
+        yield f"{n}{letter}"
 
-    pass
 
 def assign_seats(passengers):
     """Assign seats to passengers.
@@ -46,7 +54,11 @@ def assign_seats(passengers):
 
     """
 
-    pass
+    assigned_passengers = {}
+    seats = generate_seats(len(passengers))
+    for passenger in passengers:
+        assigned_passengers[passenger] = next(seats)
+    return assigned_passengers
 
 def generate_codes(seat_numbers, flight_id):
     """Generate codes for a ticket.
