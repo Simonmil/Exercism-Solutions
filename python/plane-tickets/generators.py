@@ -14,8 +14,8 @@ def generate_seat_letters(number):
 
     """
     letters = ["A","B","C","D"]
-    n = 1
-    while n <= number:
+    n = 0
+    while n < number:
         num = n % 4
         yield letters[num]
         n += 1
@@ -38,10 +38,14 @@ def generate_seats(number):
 
     """
     letters = generate_seat_letters(number)
-    for num in range(number):
-        letter = next(letters)
-        n = num//4 + 1
-        yield f"{n}{letter}"
+    n = 1
+    while n < number + 1:
+        if n == 13:
+            number += 1
+            continue
+        for num in range(4):
+            yield f"{n}{next(letters)}"
+            n += 1
 
 
 def assign_seats(passengers):
