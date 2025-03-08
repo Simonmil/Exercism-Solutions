@@ -1,7 +1,10 @@
 def square(number):
-    if 0 > number > 64:
-        raise ValueError("Square must be between 1 and 64")
-    return number * 2
+    if not 0 < number < 65:
+        raise ValueError("square must be between 1 and 64")
+    return 2 ** (number - 1)
 
 def total():
-    pass
+    sum = 0
+    for number in range(1,65):
+        sum += square(number)
+    return sum
