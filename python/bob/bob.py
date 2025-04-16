@@ -1,4 +1,5 @@
 def response(hey_bob):
+    hey_bob = hey_bob.strip()
     if len(hey_bob) == 0:
         return "Fine. Be that way!"
     elif  hey_bob == hey_bob.upper() and "?" in hey_bob:
