@@ -7,3 +7,8 @@ def is_pangram(sentence):
             if len(letters) == 26:
                 return True
     return False
+
+    """
+    import string
+    return all(character in sentence.lower() for character in string.ascii_lowercase)
+    """
