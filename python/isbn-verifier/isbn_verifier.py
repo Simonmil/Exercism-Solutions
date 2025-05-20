@@ -1,2 +1,13 @@
 def is_valid(isbn):
-    pass
+    isbn = isbn.replace("-","")
+    if not len(isbn) == 10 or not isbn.isnumeric() and not 'X' in isbn:
+        return False
+
+    sum = 0
+    for index,number in enumerate(range(10,0,-1)):
+        if isbn[index] == 'X':
+            sum += 10 * number
+        else:
+            sum += int(isbn[index]) * number
+    
+    return sum % 11 == 0
