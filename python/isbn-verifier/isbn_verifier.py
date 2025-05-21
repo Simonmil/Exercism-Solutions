@@ -1,6 +1,6 @@
 def is_valid(isbn):
     isbn = isbn.replace("-","")
-    if not len(isbn) == 10 or not isbn.isnumeric() and not 'X' in isbn:
+    if not len(isbn) == 10 or not isbn[:9].isnumeric() or not isbn.isnumeric() and not isbn[-1] == 'X':
         return False
 
     sum = 0
