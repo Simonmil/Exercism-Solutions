@@ -8,6 +8,7 @@ def resistor_label(colors):
         'gold': "5%",
         'silver': "10%"
     }
+    if len(colors) == 1: return str(value(colors)) + ' ohms' 
     return label(colors) + ' ±' + tolerance[colors[-1]]
 
 
@@ -22,6 +23,7 @@ def get_colors():
 
 
 def label(colors):
+    unit = 'ohms'
     match len(colors):
         case 4:
             code = value(colors[:2])
@@ -33,7 +35,6 @@ def label(colors):
         size += 1
         code = int(str(code)[:1])
     
-    unit = 'ohms'
     exponent = size % 3
     numeric_value = code * 10 ** exponent
     if numeric_value // (10**3) > 0:
@@ -50,5 +51,8 @@ def label(colors):
         case _:
             prefix = ' '
     
-    
-    return str(numeric_value) + prefix + unit
+    numeric_value_string = str(numeric_value)
+    if '.' in numeric_value_string and numeric_value_string[-1] == '0':
+        numeric_value_string = numeric_value_string.rstrip('.0')
+
+    return numeric_value_string  + prefix + unit
